@@ -9,5 +9,5 @@ featured-background: "featured-background.gif"
 </div>
 <h1 class="cover-title">Tiationg Kho</h1>
 <p class="lead">SDE @ Seattle</p>
-<a href="http://localhost:1313/blog" class="btn btn-secondary">Visit My Blog</a>
+<a href="https://tiationg-kho.github.io/blog" class="btn btn-secondary">Visit My Blog</a>
 {{< /blocks/cover >}}

@@ -32,10 +32,10 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: 'package-lock.json' # Update the path as needed
+          cache-dependency-path: 'package-lock.json'
 
       - run: npm ci
-      - run: hugo --baseURL https://${{ env.REPO_OWNER }}.github.io/${{ env.REPO_NAME }} --minify
+      - run: hugo --baseURL https://tiationg-kho.github.io/tiationg-kho.github.io --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4

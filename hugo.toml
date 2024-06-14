@@ -10,6 +10,8 @@ enableRobotsTXT = true
 
 enableGitInfo = true
 
+timeout = 200
+
 [outputs]
 home = ["HTML"]
 section = ["HTML"]
@@ -55,8 +57,6 @@ weight = 1
 
 [params]
 prism_syntax_highlighting = false
-
-timeout = "100s"
 
 [params.copyright]
 authors = "Tiationg Kho. All rights reserved."

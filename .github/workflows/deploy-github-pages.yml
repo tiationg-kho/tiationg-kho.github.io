@@ -7,10 +7,6 @@ on:
       - main # <-- specify the branch you want to deploy from
   pull_request:
 
-env:
-  REPO_NAME: ${{ github.event.repository.name }}
-  REPO_OWNER: ${{ github.repository_owner }}
-
 jobs:
   deploy:
     runs-on: ubuntu-22.04
@@ -32,7 +28,7 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: 'package-lock.json'
+          cache-dependency-path: 'package-lock.json' # Update the path as needed
 
       - run: npm ci
       - run: hugo --baseURL https://tiationg-kho.github.io/tiationg-kho.github.io --minify
@@ -42,3 +38,4 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }} # <-- specify same branch as above here
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

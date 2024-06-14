@@ -1,4 +1,4 @@
-baseURL = "https://tiationg.com/"
+baseURL = "/"
 title = "Tiationg's Portfolio"
 
 contentDir = "content/en"

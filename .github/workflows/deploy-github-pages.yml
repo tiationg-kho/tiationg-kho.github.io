@@ -28,15 +28,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: 'package-lock.json'
 
-        - name: Install dependencies
-          run: |
-            if [ -e yarn.lock ]; then
-            yarn install --frozen-lockfile
-            elif [ -e package-lock.json ]; then
-            npm ci
-            else
-            npm i
-            fi
+      - run: npm i && npm ci
       - run: hugo --baseURL https://tiationg-kho.github.io/tiationg-kho.github.io --minify
 
       - name: Deploy

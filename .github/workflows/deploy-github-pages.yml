@@ -1,4 +1,4 @@
-name: Deployment to GitHub Page
+name: Deployment to GitHub Pages
 
 on:
   workflow_dispatch:
@@ -29,7 +29,7 @@ jobs:
           cache-dependency-path: 'package-lock.json'
 
       - run: npm i && npm ci
-      - run: hugo --baseURL https://github.com/tiationg-kho/tiationg-kho.github.io --minify
+      - run: hugo --baseURL https://tiationg-kho.github.io/ --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4

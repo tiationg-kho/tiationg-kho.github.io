@@ -1,0 +1,16 @@
+---
+title: Join Algorithm
+date: 2024-06-13
+tags: [SQL]
+author: "Tiationg Kho"
+weight: 30
+---
+
+## Join Algorithm
+
+|               | Nested Loops Join                                                                                                                      | Merge Join                                                                                                                                                                      | Hash Join                                                                                                                                                                   |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Definition    | For each row in the first table (outer loop), the database system searches through the second table (inner loop) to find matching rows | Used when both input tables are sorted on the join key. The database engine reads through both tables simultaneously, like merging two sorted lists, and outputs matching pairs | Building a hash table on the join key of one of the tables (usually the smaller one) and then scanning the other table to find matching rows by looking into the hash table |
+| Best Use Case | Small datasets or when one table is much smaller than the other                                                                        | Large, sorted datasets                                                                                                                                                          | Large, unsorted datasets                                                                                                                                                    |
+| Performance   | Can be slow for large datasets, but fast for small to medium datasets with indexes                                                     | Very efficient if data is sorted on join columns                                                                                                                                | Fast for large datasets, but requires more memory                                                                                                                           |
+| Memory Usage  | Low, since it processes one row at a time                                                                                              | Moderate, depending on the size of the datasets                                                                                                                                 | High, due to the creation of a hash table                                                                                                                                   |
